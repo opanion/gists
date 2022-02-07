@@ -12,18 +12,29 @@ class Stack:
         self.items.append(item)
         
     def pop(self):
+        '''
+        Removes the item on top of the stack and returns it
+        '''
         if self.items:
             return self.items.pop()
         return None
 
     def peek(self):
+        '''
+        Returns the item on top of the stack
+        '''
         if self.items:
             return self.items[-1]
 
     def size(self):
+        '''
+        Returns the number of items in the stack
+        '''
         return len(self.items)
 
     def is_empty(self):
+        '''
+        Returns a boolean on whether the stack is empty or not'''
         return self.items == []
 
 my_stack = Stack()
