@@ -88,7 +88,7 @@ class SLL:
                 else:
                     previous = current
                     current = current.get_next()
-        #first item
+
         if previous is None:
             self.head = current.get_next()
         else:
