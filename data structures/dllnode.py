@@ -1,3 +1,6 @@
+from calendar import c
+
+
 class DLLNode:
 
     def __init__(self, data):
@@ -82,5 +85,32 @@ class DLL:
         return False
 
     def remove(self, data):
-        pass
+        if self.head is None:
+            return 'Linked list is empty. No node to remove'
+        
+        current = self.head
+        found = False
 
+        while not found:
+            if current.get_data() == data:
+                found = True
+            else:
+                if current.get_next() == None:
+                    return 'Node with that data value not found'
+                else:
+                    current = current.get_next()
+
+        if current.prev is None:
+            self.head = current.get_next()
+        else:
+            current.prev.set_next(current.get_next())
+            current.next.set_prev(current.get_prev())
+
+
+dll = DLL()
+dll.remove(5)
+dll.add_front(50)
+dll.add_front(90)
+print(dll.size())
+print(dll.head)
+print(dll.remove(80))

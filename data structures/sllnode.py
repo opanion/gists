@@ -83,7 +83,7 @@ class SLL:
             if current.get_data() == data:
                 found = True
             else:
-                if current.get_data() == None:
+                if current.get_next() == None:
                     return 'Node with that data value not found'
                 else:
                     previous = current
@@ -94,9 +94,3 @@ class SLL:
         else:
             previous.set_next(current.get_next())
 
-
-sll = SLL()
-sll.add_front(15)
-print(sll.head)
-sll.remove(15)
-print(sll.head)
