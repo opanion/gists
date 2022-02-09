@@ -1,10 +1,9 @@
 from collections import deque
 import string
-from typing import Deque
 
 def main():
     #initialize deque with lowercase letters
-    d = Deque(string.ascii_lowercase)
+    d = deque(string.ascii_lowercase)
 
     #deques support the len() function
     print('Item count:', len(d))
